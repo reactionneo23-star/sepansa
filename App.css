@@ -1,0 +1,149 @@
+/* SEPANSA Website Styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(215, 38, 61, 0.2);
+  color: #111111;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #D7263D;
+  outline-offset: 2px;
+}
+
+/* Image loading placeholder */
+img {
+  background-color: #E9E1D2;
+}
+
+/* Button hover lift effect */
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Card hover effects */
+.sepansa-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sepansa-card:hover {
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14);
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Animation for floating elements */
+@keyframes gentle-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.animate-gentle-float {
+  animation: gentle-float 4s ease-in-out infinite;
+}
+
+/* Pulse animation for CTA buttons */
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(215, 38, 61, 0.35);
+  }
+  50% {
+    box-shadow: 0 12px 32px rgba(215, 38, 61, 0.5);
+  }
+}
+
+.sepansa-btn-primary {
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+.sepansa-btn-primary:hover {
+  animation: none;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #D7263D 0%, #1E5AA8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #E9E1D2 25%,
+    #F4EFE6 50%,
+    #E9E1D2 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .grain-overlay,
+  nav,
+  button {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+  }
+  
+  .sepansa-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
